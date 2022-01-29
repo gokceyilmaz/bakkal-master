@@ -1,0 +1,220 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://thymeleaf.org">
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <title>BYS</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <style>
+    body {
+      font: 400 15px Lato, sans-serif;
+      line-height: 1.8;
+      color: #818181;
+    }
+    h2 {
+      font-size: 24px;
+      text-transform: uppercase;
+      color: #303030;
+      font-weight: 600;
+      margin-bottom: 30px;
+    }
+    h4 {
+      font-size: 19px;
+      line-height: 1.375em;
+      color: #303030;
+      font-weight: 400;
+      margin-bottom: 30px;
+    }
+    .jumbotron {
+      background-color: #3498DB;
+      color: #fff;
+      padding: 100px 25px;
+      font-family: Montserrat, sans-serif;
+    }
+    .thumbnail img {
+      width: 100%;
+      height: 100%;
+      margin-bottom: 10px;
+    }
+
+    .carousel-indicators li {
+      border-color: #3498DB;
+    }
+    .carousel-indicators li.active {
+      background-color: #3498DB;
+    }
+    .item h4 {
+      font-size: 19px;
+      line-height: 1.375em;
+      font-weight: 400;
+      font-style: italic;
+      margin: 70px 0;
+    }
+    .item span {
+      font-style: normal;
+    }
+    .panel-footer .btn:hover {
+      border: 1px solid #3498DB;
+      background-color: #fff !important;
+      color: #3498DB;
+    }
+    .panel-footer h3 {
+      font-size: 32px;
+    }
+    .panel-footer h4 {
+      color: #aaa;
+      font-size: 14px;
+    }
+
+    .navbar {
+      margin-bottom: 0;
+      background-color: #3498DB;
+      z-index: 9999;
+      border: 0;
+      font-size: 12px !important;
+      line-height: 1.42857143 !important;
+      letter-spacing: 4px;
+      border-radius: 0;
+      font-family: Montserrat, sans-serif;
+    }
+    .navbar li a, .navbar .navbar-brand {
+      color: #fff !important;
+    }
+    .navbar-nav li a:hover, .navbar-nav li.active a {
+      color: #3498DB !important;
+      background-color: #fff !important;
+    }
+    .navbar-default .navbar-toggle {
+      border-color: transparent;
+      color: #fff !important;
+    }
+    footer .glyphicon {
+      font-size: 20px;
+      margin-bottom: 20px;
+      color: #3498DB;
+    }
+    @keyframes slide {
+      0% {
+        opacity: 0;
+        transform: translateY(70%);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0%);
+      }
+    }
+    @-webkit-keyframes slide {
+      0% {
+        opacity: 0;
+        -webkit-transform: translateY(70%);
+      }
+      100% {
+        opacity: 1;
+        -webkit-transform: translateY(0%);
+      }
+    }
+    @media screen and (max-width: 768px) {
+      .col-sm-4 {
+        text-align: center;
+        margin: 25px 0;
+      }
+      .btn-lg {
+        width: 100%;
+        margin-bottom: 35px;
+      }
+    }
+    @media screen and (max-width: 480px) {
+      .logo {
+        font-size: 150px;
+      }
+    }
+  </style>
+</head>
+<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="anasayfa">BYS</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="anasayfa">ANASAYFA</a></li>
+        <li><a href="urun">ÜRÜNLER</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<hr>
+<hr>
+<div class="container ">
+  <form class="col-sm-12" form action="/urunkaydet" method="post" >
+    <h2>Ürün Kayıt</h2>
+    <div class="mb-3">
+      <label for="urunAdi" class="form-label">Ürün Adı</label>
+      <input name="urunAdi" type="text" class="form-control" id="urunAdi" placeholder="Ürün adını giriniz">
+    </div>
+    <hr>
+    <div class="mb-3">
+      <label for="urunBarkodu" class="form-label">Barkod</label>
+      <textarea class="form-control z-depth-1" name="urunBarkodu" id="urunBarkodu" placeholder="Barkodu giriniz"></textarea>
+    </div>
+    <hr>
+    <div class="mb-3">
+      <label for="urunUretimTarihi" class="form-label">Üretim Tarihi</label>
+      <br>
+      <input type="date" id="urunUretimTarihi" name="urunUretimTarihi">
+    </div>
+    <hr>
+    <div class="mb-3">
+      <label for="urunTuketimTarihi" class="form-label">Tüketim Tarihi</label>
+      <br>
+      <input type="date" id="urunTuketimTarihi" name="urunTuketimTarihi">
+    </div>
+    <hr>
+    <div class="mb-3">
+      <label for="urunFiyat" class="form-label">Fiyat</label>
+      <textarea class="form-control z-depth-1" name="urunFiyat" id="urunFiyat" placeholder="Fiyatını giriniz"></textarea>
+    </div>
+    <hr>
+    <div class="mb-3">
+      <label for="urunAgirlik" class="form-label">Ağırlık</label>
+      <textarea class="form-control z-depth-1" name="urunAgirlik" id="urunAgirlik" placeholder="Ağırlığını giriniz"></textarea>
+    </div>
+    <hr>
+    <div class="mb-3">
+      <label for="urunRengi" class="form-label">Renk</label>
+      <textarea class="form-control z-depth-1" name="urunRengi" id="urunRengi" placeholder="Rengini giriniz"></textarea>
+    </div>
+    <hr>
+    <button type="submit" class="btn btn-primary ">KAYDET</button>
+  </form>
+
+</div>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+<script>
+
+  function deleteConfirm() {
+    return confirm("Emin misiniz?");
+  }
+
+  $( document ).ready(function() {
+
+  })
+  function logOut() {
+    return confirm("Çıkış yapmak istediğinize emin misiniz?");
+  }
+</script>
+</body>
+</html>
