@@ -41,7 +41,7 @@
         }
 
         .carousel-indicators li {
-            border-color: #f4511e;
+            border-color: #3498DB;
         }
 
         .item h4 {
@@ -67,7 +67,7 @@
 
         .navbar {
             margin-bottom: 0;
-            background-color: #f4511e;
+            background-color: #3498DB;
             z-index: 9999;
             border: 0;
             font-size: 12px !important;
@@ -82,7 +82,7 @@
         }
 
         .navbar-nav li a:hover, .navbar-nav li.active a {
-            color: #f4511e !important;
+            color: #3498DB !important;
             background-color: #fff !important;
         }
 
@@ -120,12 +120,8 @@
         @media screen and (max-width: 480px) {
         }
 
-        .btn-primary {
-            background-color: darkslateblue;
-        }
-
         a:hover.btn-primary {
-            background-color: #f4511e;
+            background-color: #3498DB;
         }
     </style>
 </head>
@@ -143,7 +139,7 @@
         <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav navbar-right">
                 <li><a href="urun">ÜRÜNLER</a></li>
-                <li><a href="marka">MARKA</a></li>
+                <li><a href="satis">SATIŞ</a></li>
                 <li><a href="stok">STOK</a></li>
                 <li><a onclick="return logOut()" href="giris">ÇIKIŞ</a></li>
             </ul>
@@ -160,38 +156,32 @@
             <input name="satisMiktar" class="form-control" id="satisMiktar" placeholder="Satıs miktarını giriniz">
         </div>
         <hr>
-        <br>
         <div class="mb-3">
             <label for="satisFiyat" class="form-label">Satıs Fiyatı</label>
             <textarea class="form-control z-depth-1" name="satisFiyat" id="satisFiyat"
                       placeholder="Satıs Fiyatını giriniz"></textarea>
         </div>
         <hr>
-        <br>
         <div class="mb-3">
             <label for="satisIskonto" class="form-label">Iskonto</label>
             <textarea class="form-control z-depth-1" name="satisIskonto" id="satisIskonto"
                       placeholder="Iskonto miktarını giriniz"></textarea>
         </div>
         <hr>
-        <br>
         <div class="mb-3">
             <label for="satisId" class="form-label">Satıs Id</label>
             <textarea class="form-control z-depth-1" name="satisId" id="satisId"
                       placeholder="Satıs Id değerini giriniz"></textarea>
         </div>
         <hr>
-        <br>
         <div class="mb-3">
             <label for="UrunId" class="form-label">Ürün Id</label>
             <textarea class="form-control z-depth-1" name="UrunId" id="UrunId"
                       placeholder="Ürün Id değerini giriniz"></textarea>
         </div>
         <hr>
-        <br>
         <button type="submit" class="btn btn-primary ">KAYDET</button>
     </form>
-    <br>
 
 </div>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
