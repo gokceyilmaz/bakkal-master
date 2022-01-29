@@ -2,7 +2,6 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-    <!-- Theme Made By www.w3schools.com -->
     <title>BYS</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -132,18 +131,126 @@
         <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav navbar-right">
                 <li><a href="anasayfa">ANASAYFA</a></li>
+                <li><a href="satis">SATIŞ</a></li>
                 <li><a href="urun">ÜRÜNLER</a></li>
                 <li><a href="marka">MARKA</a></li>
                 <li><a href="stok">STOK</a></li>
-                <li><a href="kategori">KATEGORİ</a></li>
-                <li><a href="kullanici">HESAP</a></li>
                 <li><a onclick="return logOut()" href="giris">ÇIKIŞ</a></li>
             </ul>
         </div>
     </div>
 </nav>
+<!-- Container (Pricing Section) -->
+<div id="kayit" class="container-fluid">
+    <div class="text-center">
+        <td><h2>Satıs</h2></td>
+        <hr>
+        <td><a style="display: block; width: 100%" th:href="satismaddeleri" class="btn btn-primary btn-sm">Satıs Maddelerine Git</a></td>
+        <hr>
+        <td><a style="display: block; width: 100%" th:href="satisekle" class="btn btn-primary btn-sm">Satıs Yap</a></td>
+        <hr>
+    </div>
+    <div>
+        <table class="table">
+            <thead>
+            <tr>
+                <th scope="col">Id</th>
+                <th scope="col"></th>
+                <th scope="col"></th>
+                <th scope="col">Satıs Tarihi</th>
+                <th scope="col"></th>
+                <th scope="col"></th>
+                <th scope="col">Durum</th>
+                <th scope="col"></th>
+                <th scope="col"></th>
+                <th scope="col">Kullanıcı Id</th>
+                <th scope="col"></th>
+                <th scope="col"></th>
+                <th scope="col"></th>
+                <th scope="col"></th>
+                <th scope="col"></th>
+                <th scope="col"></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="item: ${list}">
+                <td class="col-auto" th:text="${item.satisId}"></td>
+                <td class="col-auto"></td>
+                <td class="col-auto"></td>
+                <td class="col-auto" th:text="${item.satisTarih}"></td>
+                <td class="col-auto"></td>
+                <td class="col-auto"></td>
+                <td class="col-auto" th:text="${item.satisDurum}"></td>
+                <td class="col-auto"></td>
+                <td class="col-auto"></td>
+                <td class="col-auto" th:text="${item.kullaniciId}"></td>
+                <td class="col-auto"></td>
+                <td class="col-auto"></td>
+                <td class="col-auto">
+                    <a onclick="return deleteConfirm()" th:href="@{/satissil(id=${item.satisId})}"
+                       class="btn btn-danger btn-sm">SİL</a>
+                </td>
+                <td class="col-auto"></td>
+                <td class="col-auto"></td>
+                <td class="col-auto">
+                    <a th:href="@{/satisedit(id=${item.satisId})}" class="btn btn-primary btn-sm">GÜNCELLE</a>
+                </td>
+                <td class="col-auto"></td>
+                <td class="col-auto"></td>
+                <td class="col-auto">
+                    <a th:href="@{/satismaddelerieditfromsatis(id=${item.satisId})}" class="btn btn-primary btn-sm">SATIS MADDESI GUNCELLE</a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+        <div class="card-footer bg-white text-success" th:if="${message!=null}">
+            <span th:text="${message}"></span>
+        </div>
+    </div>
+</div>
+
 <script>
+    $(document).ready(function () {
+        // Add smooth scrolling to all links in navbar + footer link
+        $(".navbar a, footer a[href='#myPage']").on('click', function (event) {
+            // Make sure this.hash has a value before overriding default behavior
+            if (this.hash !== "") {
+                // Prevent default anchor click behavior
+                event.preventDefault();
+                var hash = this.hash;
+                $('html, body').animate({
+                    scrollTop: $(hash).offset().top
+                }, 900, function () {
+
+                    // Add hash (#) to URL when done scrolling (default click behavior)
+                    window.location.hash = hash;
+                });
+            } // End if
+        });
+
+        $(window).scroll(function () {
+            $(".slideanim").each(function () {
+                var pos = $(this).offset().top;
+
+                var winTop = $(window).scrollTop();
+                if (pos < winTop + 600) {
+                    $(this).addClass("slide");
+                }
+            });
+        });
+    })
+
+    function deleteConfirm() {
+        return confirm("Satışı silmek istediğinize emin misiniz?");
+    }
+
     function logOut() {
         return confirm("Çıkış yapmak istediğinize emin misiniz?");
     }
 </script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+</body>
+</html>

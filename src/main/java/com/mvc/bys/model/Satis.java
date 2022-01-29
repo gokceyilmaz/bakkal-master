@@ -5,6 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
 import java.time.LocalDate;
@@ -23,6 +24,7 @@ public class Satis {
     private int satisId;
 
     @Column(name = "s_tarih")
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private LocalDate satisTarih;
 
     @Column(name = "s_durum")

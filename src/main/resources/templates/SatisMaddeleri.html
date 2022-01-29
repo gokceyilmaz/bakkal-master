@@ -1,77 +1,24 @@
-<html lang="tr" xmlns:th="http://www.thymeleaf.org">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://thymeleaf.org">
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-    <title>BYS</title>
+    <!-- Theme Made By www.w3schools.com -->
+    <title>B A K K A L</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
-    <meta name="author" content="www.twitter.com/cheeriottis">
-    <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <style>
-        .animate
-        {
-            transition: all 0.1s;
-            -webkit-transition: all 0.1s;
-        }
-
-        .action-button
-        {
-            position: relative;
-            padding: 40px 326px;
-            margin: 0px 10px 10px 50px;
-            float: left;
-            border-radius: 20px;
-            font-family: sans-serif;
-            font-size: 35px;
-            color: #FFF;
-            text-decoration: none;
-        }
-
-        .blue
-        {
-            background-color: #3498DB;
-            border-bottom: 5px solid #2980B9;
-            text-shadow: 0px -2px #2980B9;
-        }
-
-        .red
-        {
-            background-color: #E74C3C;
-            border-bottom: 5px solid #BD3E31;
-            text-shadow: 0px -2px #BD3E31;
-        }
-
-        .green
-        {
-            background-color: #82BF56;
-            border-bottom: 5px solid #669644;
-            text-shadow: 0px -2px #669644;
-        }
-
-        .yellow
-        {
-            background-color: #F2CF66;
-            border-bottom: 5px solid #D1B358;
-            text-shadow: 0px -2px #D1B358;
-        }
-
-        .action-button:active
-        {
-            transform: translate(0px,5px);
-            -webkit-transform: translate(0px,5px);
-            border-bottom: 1px solid;
-        }
         body {
             font: 400 15px Lato, sans-serif;
             line-height: 1.8;
             color: #818181;
-            background-color: dimgray;
         }
+
         h2 {
             font-size: 24px;
             text-transform: uppercase;
@@ -79,6 +26,7 @@
             font-weight: 600;
             margin-bottom: 30px;
         }
+
         h4 {
             font-size: 19px;
             line-height: 1.375em;
@@ -86,11 +34,9 @@
             font-weight: 400;
             margin-bottom: 30px;
         }
-        .jumbotron {
-            background-color: #000000;
-            color: rgba(199, 196, 196, 0.89);
-            padding: 50px 25px;
-            font-family: Montserrat, sans-serif;
+
+        .container-fluid {
+            padding: 60px 50px;
         }
 
         .thumbnail img {
@@ -100,7 +46,7 @@
         }
 
         .carousel-indicators li {
-            border-color: #000000;
+            border-color: #f4511e;
         }
 
         .item h4 {
@@ -110,6 +56,7 @@
             font-style: italic;
             margin: 70px 0;
         }
+
         .item span {
             font-style: normal;
         }
@@ -117,6 +64,7 @@
         .panel-footer h3 {
             font-size: 32px;
         }
+
         .panel-footer h4 {
             color: #aaa;
             font-size: 14px;
@@ -124,7 +72,7 @@
 
         .navbar {
             margin-bottom: 0;
-            background-color: #000000;
+            background-color: #f4511e;
             z-index: 9999;
             border: 0;
             font-size: 12px !important;
@@ -133,13 +81,16 @@
             border-radius: 0;
             font-family: Montserrat, sans-serif;
         }
+
         .navbar li a, .navbar .navbar-brand {
             color: #fff !important;
         }
+
         .navbar-nav li a:hover, .navbar-nav li.active a {
-            color: #000000 !important;
+            color: #f4511e !important;
             background-color: #fff !important;
         }
+
         .navbar-default .navbar-toggle {
             border-color: transparent;
             color: #fff !important;
@@ -163,6 +114,7 @@
                 transform: translateY(0%);
             }
         }
+
         @-webkit-keyframes slide {
             0% {
                 opacity: 0;
@@ -173,16 +125,25 @@
                 -webkit-transform: translateY(0%);
             }
         }
+
         @media screen and (max-width: 768px) {
         }
+
         @media screen and (max-width: 480px) {
         }
 
+        .btn-primary {
+            background-color: darkslateblue;
+
+        }
+
+        a:hover.btn-primary {
+            background-color: #f4511e;
+        }
 
     </style>
 </head>
 <body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
-
 <nav class="navbar navbar-default navbar-fixed-top">
     <div class="container">
         <div class="navbar-header">
@@ -191,12 +152,11 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="anasayfa">BYS</a>
+            <a class="navbar-brand" href="anasayfa">B A K K A L</a>
         </div>
         <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="anasayfa">ANASAYFA</a></li>
-                <li><a href="satis">SATIŞ</a></li>
+                <li><a href="satis">SATIS</a></li>
                 <li><a href="urun">ÜRÜNLER</a></li>
                 <li><a href="marka">MARKA</a></li>
                 <li><a href="stok">STOK</a></li>
@@ -207,21 +167,55 @@
         </div>
     </div>
 </nav>
+<!-- Container (Pricing Section) -->
+<div id="kayit" class="container-fluid">
+    <div class="text-center">
+        <td><h2>Satıs Maddeleri</h2></td>
+        <hr>
+        <td><a style="display: block; width: 100%" th:href="satismaddeleriekle" class="btn btn-primary btn-sm">Satıs Maddesi Ekle</a></td>
+        <hr>
+    </div>
+    <div>
+        <table class="table">
+            <thead>
+            <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Miktar</th>
+                <th scope="col">Satıs Fiyatı</th>
+                <th scope="col">Iskonto </th>
+                <th scope="col">Satıs Id</th>
+                <th scope="col">Urun Id</th>
+                <th scope="col"></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="item: ${list}">
+                <td class="col-auto" th:text="${item.satisMaddeleriId}"></td>
+                <td class="col-auto" th:text="${item.satisMiktar}"></td>
+                <td class="col-auto" th:text="${item.satisFiyat}"></td>
+                <td class="col-auto" th:text="${item.satisIskonto}"></td>
+                <td class="col-auto" th:text="${item.satisId}"></td>
+                <td class="col-auto" th:text="${item.UrunId}"></td>
+                <td class="col-auto">
+                    <a onclick="return deleteConfirm()" th:href="@{/satismaddelerisil(id=${item.satisMaddeleriId})}"
+                       class="btn btn-danger btn-sm">SİL</a>
+                </td>
+                <td class="col-auto">
+                    <a th:href="@{/satismaddeleriedit(id=${item.satisMaddeleriId})}" class="btn btn-primary btn-sm">GÜNCELLE</a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+        <div class="card-footer bg-white text-success" th:if="${message!=null}">
+            <span th:text="${message}"></span>
+        </div>
+    </div>
+</div>
 
-<div class="jumbotron text-center">
-    <h1>BAKKAL YÖNETİM SİSTEMİ</h1>
-</div>
-<div >
-    <a href="urun"  class="action-button shadow animate blue">ÜRÜNLER</a>
-    <a style="float: right" href="marka" class="action-button shadow animate red">MARKA</a>
-    <a href="stok" class="action-button shadow animate green">STOK</a>
-    <a style="float: right" href="kategori" class="action-button shadow animate yellow">KATEGORİ</a>
-    <a href="kullanici" class="action-button shadow animate blue">HESAP</a>
-</div>
 <script>
-    $(document).ready(function(){
+    $(document).ready(function () {
         // Add smooth scrolling to all links in navbar + footer link
-        $(".navbar a, footer a[href='#myPage']").on('click', function(event) {
+        $(".navbar a, footer a[href='#myPage']").on('click', function (event) {
             // Make sure this.hash has a value before overriding default behavior
             if (this.hash !== "") {
                 // Prevent default anchor click behavior
@@ -234,7 +228,7 @@
                 // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
                 $('html, body').animate({
                     scrollTop: $(hash).offset().top
-                }, 900, function(){
+                }, 900, function () {
 
                     // Add hash (#) to URL when done scrolling (default click behavior)
                     window.location.hash = hash;
@@ -242,8 +236,8 @@
             } // End if
         });
 
-        $(window).scroll(function() {
-            $(".slideanim").each(function(){
+        $(window).scroll(function () {
+            $(".slideanim").each(function () {
                 var pos = $(this).offset().top;
 
                 var winTop = $(window).scrollTop();
@@ -253,10 +247,18 @@
             });
         });
     })
+
+    function deleteConfirm() {
+        return confirm("Satışı silmek istediğinize emin misiniz?");
+    }
+
     function logOut() {
         return confirm("Çıkış yapmak istediğinize emin misiniz?");
     }
 </script>
-
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
 </body>
 </html>

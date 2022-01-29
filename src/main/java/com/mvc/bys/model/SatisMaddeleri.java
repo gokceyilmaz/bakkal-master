@@ -22,16 +22,16 @@ public class SatisMaddeleri {
     private int satisMaddeleriId;
 
     @Column(name = "si_miktar")
-    private double satisMiktar;
+    private int satisMiktar;
 
     @Column(name = "si_fiyat")
-    private double satisFiyat;
+    private int satisFiyat;
 
     @Column(name = "si_iskonto")
-    private double satisIskonto;
+    private int satisIskonto;
 
     @Column(name = "satis_id")
-    private int satisiId;
+    private int satisId;
 
     @Column(name = "urun_id")
     private int UrunId;
