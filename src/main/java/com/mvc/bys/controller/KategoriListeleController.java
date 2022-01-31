@@ -6,7 +6,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
-
+//kateorileri listeleme  ve silme işlemlerine yönlendirme yapıyoruz.
 @Controller
 public class KategoriListeleController {
     final KategoriRepository kategoriRepository;

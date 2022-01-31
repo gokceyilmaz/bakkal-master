@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+//kategorileri güncelleme işlemlerini çeşitli yerlerde kullanarak yönlendirmelerini yapıyoruz
 @Controller
 public class KategoriGuncelleController {
     final KategoriRepository kategoriRepository;

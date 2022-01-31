@@ -6,13 +6,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class AnasayfaController {
 
-    @RequestMapping("/anasayfa")
+    @RequestMapping("/anasayfa") //anasayfa yönlendirmesi yapıyor
     public String anasayfa()
     {
         return"/Anasayfa";
     }
 
-    @RequestMapping
+    @RequestMapping // proje çalıştığı an login sayfasını açıyor
     public String goLogin()
     {
         return"/login";

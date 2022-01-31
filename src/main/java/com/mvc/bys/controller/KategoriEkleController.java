@@ -14,12 +14,12 @@ public class KategoriEkleController {
         this.kategoriRepository = kategoriRepository;
     }
 
-    @GetMapping("/kategoriekle")
+    @GetMapping("/kategoriekle") //kategori ekleme işlemi sayfasına yönlendiriyor
     public String kategoriEkle()
     {
         return "KategoriEkle";
     }
-    @RequestMapping(value = "/kategorikaydet", method = RequestMethod.POST)
+    @RequestMapping(value = "/kategorikaydet", method = RequestMethod.POST) //kategori kaydetme sayfasına yönlendiriyor
     public String save(Kategori kategori) {
         kategoriRepository.save(kategori);
         return "redirect:/kategori";
